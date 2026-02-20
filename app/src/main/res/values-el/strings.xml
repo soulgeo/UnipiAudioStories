@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UnipiAudioStories</string>
+    <string name="read_from_our_wonderful_selection">Διάβασε ένα από τα υπέροχα παιδικά παραμύθια μας!</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="story_title">Τίτλος Ιστορίας</string>
+    <string name="author">Συγγραφέας</string>
+    <string name="full_text_goes_here">Full Text Goes Here...</string>
+    <string name="read_story">Διάβασε το Παραμύθι</string>
+    <string name="story_cover">Εξώφυλλο Ιστορίας</string>
+    <string name="language">Γλώσσα</string>
+    <string name="english">English</string>
+    <string name="greek">Ελληνικά</string>
+    <string name="japanese">日本語</string>
+    <string name="save">Αποθήκευση</string>
+    <string name="my_listening_stats">Τα Στατιστικά μου</string>
+    <string name="statistics">Στατιστικά</string>
+</resources>
