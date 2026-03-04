@@ -39,9 +39,9 @@ public class SettingsActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("AppConfig", MODE_PRIVATE);
 
         String lang = prefs.getString("My_Lang", "en");
-        if (lang.equals("el")) rbGreek.setChecked(true);
-        else if (lang.equals("ja")) rbJapanese.setChecked(true);
-        else rbEnglish.setChecked(true);
+        if (lang.equals("el")) { rbGreek.setChecked(true); }
+        else if (lang.equals("ja")) { rbJapanese.setChecked(true); }
+        else { rbEnglish.setChecked(true); }
     }
 
     private void saveSettings() {

@@ -59,7 +59,6 @@ public class StoryStatsActivity extends AppCompatActivity {
 
         List<StatItem> statsList = new ArrayList<>();
 
-        // 1. Extract data
         for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
             String key = entry.getKey();
             if (key.startsWith("count_")) {
@@ -70,10 +69,8 @@ public class StoryStatsActivity extends AppCompatActivity {
             }
         }
 
-        // 2. Sort by plays (Highest first)
         Collections.sort(statsList);
 
-        // 3. Display
         if (statsList.isEmpty()) {
             showEmptyState();
         } else {
@@ -87,20 +84,16 @@ public class StoryStatsActivity extends AppCompatActivity {
         for (int i = 0; i < list.size(); i++) {
             StatItem item = list.get(i);
 
-            // Create a new row from XML
             View rowView = inflater.inflate(R.layout.item_stat, statsContainer, false);
 
-            // Find views inside that row
             TextView tvRank = rowView.findViewById(R.id.tvRank);
             TextView tvTitle = rowView.findViewById(R.id.tvStatTitle);
             TextView tvCount = rowView.findViewById(R.id.tvCount);
 
-            // Set data
             tvRank.setText((i + 1) + "."); // 1., 2., 3.
             tvTitle.setText(item.title);
             tvCount.setText(item.count + " plays");
 
-            // Add to the screen
             statsContainer.addView(rowView);
         }
     }

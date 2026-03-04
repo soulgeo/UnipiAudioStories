@@ -78,7 +78,7 @@ public class StoryDetailsActivity extends AppCompatActivity implements TextToSpe
     @Override
     public void onInit(int status) {
         if (status == TextToSpeech.SUCCESS) {
-            // Set language to English (Stories are usually read in their native language)
+            // Set language to English
             int result = tts.setLanguage(Locale.US);
 
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
@@ -116,8 +116,6 @@ public class StoryDetailsActivity extends AppCompatActivity implements TextToSpe
         SharedPreferences statsPrefs = getSharedPreferences("StoryStats", MODE_PRIVATE);
         SharedPreferences.Editor editor = statsPrefs.edit();
 
-        // Key: "count_" + Story Title
-        // Value: Current Count + 1
         String key = "count_" + storyTitle;
         int currentCount = statsPrefs.getInt(key, 0);
 

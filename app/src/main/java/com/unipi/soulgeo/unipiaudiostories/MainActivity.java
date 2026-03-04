@@ -48,32 +48,34 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Toolbar initialization
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Settings button initialization
         ImageButton btnSettings = findViewById(R.id.btnSettings);
         btnSettings.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intent);
         });
 
+        // Statistics button initialization
         ImageButton btnStats = findViewById(R.id.btnStats);
         btnStats.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, StoryStatsActivity.class));
         });
 
-        // Initialize Firestore
+        // Firestore initialization
         db = FirebaseFirestore.getInstance();
-        storyList = new ArrayList<>();
 
+        // Story list initialization
+        storyList = new ArrayList<>();
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new StoryAdapter(storyList, story -> {
-            // Create Intent to go to Details Page
             Intent intent = new Intent(MainActivity.this, StoryDetailsActivity.class);
-
-            // Pass the data field by field
             intent.putExtra("sid", story.getSid());
             intent.putExtra("title", story.getTitle());
             intent.putExtra("text", story.getText());
